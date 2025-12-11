@@ -12,6 +12,8 @@ data class DayStatus(
     val solutionFile: String?
 )
 
+val NUM_DAYS = 12
+
 fun analyzeSolutionFile(file: File): Pair<Boolean, Boolean> {
     val content = file.readText()
     
@@ -45,7 +47,7 @@ fun generateStarDisplay(part1: Boolean, part2: Boolean): String {
 fun generateProgressBar(solved: Int, total: Int): String {
     val percentage = if (total > 0) (solved * 100) / total else 0
     val filledBlocks = (percentage / 4) // Each block represents 4%
-    val emptyBlocks = 25 - filledBlocks
+    val emptyBlocks = NUM_DAYS - filledBlocks
     
     return "█".repeat(filledBlocks) + "░".repeat(emptyBlocks) + " $percentage%"
 }
@@ -59,8 +61,7 @@ fun main() {
     
     val days = mutableListOf<DayStatus>()
     
-    // Analyze each day (1-25)
-    for (day in 1..25) {
+    for (day in 1..NUM_DAYS) {
         val dayStr = String.format("%02d", day)
         val solutionFile = File(srcDir, "Day$dayStr.kt")
         val inputFile = File(srcDir, "Day$dayStr.txt")
@@ -111,7 +112,7 @@ fun main() {
     }
     
     val currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM d, yyyy"))
-    val progressBar = generateProgressBar(totalStars, 50)
+    val progressBar = generateProgressBar(totalStars, NUM_DAYS * 2)
     
     val readme = """
         |# 🎄 Advent of Code 2025 - Kotlin Solutions
@@ -124,8 +125,8 @@ fun main() {
         |## 📊 Progress
         |
         |```
-        |Stars collected: $totalStars/50 ⭐
-        |Days completed: $solvedDays/25 📅
+        |Stars collected: $totalStars/${NUM_DAYS * 2} ⭐
+        |Days completed: $solvedDays/$NUM_DAYS 📅
         |Progress: $progressBar
         |```
         |
@@ -191,7 +192,7 @@ fun main() {
     
     File("README.md").writeText(readme)
     println("✅ README.md updated successfully!")
-    println("📊 Progress: $totalStars/50 stars, $solvedDays/25 days completed")
+    println("📊 Progress: $totalStars/${NUM_DAYS * 2} stars, $solvedDays/$NUM_DAYS days completed")
 }
 
 main()

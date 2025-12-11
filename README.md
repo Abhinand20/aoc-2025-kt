@@ -8,9 +8,9 @@ My solutions for [Advent of Code 2025](https://adventofcode.com/2025) written in
 ## 📊 Progress
 
 ```
-Stars collected: 4/50 ⭐
-Days completed: 2/25 📅
-Progress: ██░░░░░░░░░░░░░░░░░░░░░░░ 8%
+Stars collected: 4/24 ⭐
+Days completed: 2/12 📅
+Progress: ████░░░░░░░░ 16%
 ```
 
 ## 📅 Solutions
@@ -29,19 +29,6 @@ Progress: ██░░░░░░░░░░░░░░░░░░░░░�
  10 | [Day 10](https://adventofcode.com/2025/day/10) | ⚫⚫ | — |  |
  11 | [Day 11](https://adventofcode.com/2025/day/11) | ⚫⚫ | — |  |
  12 | [Day 12](https://adventofcode.com/2025/day/12) | ⚫⚫ | — |  |
- 13 | [Day 13](https://adventofcode.com/2025/day/13) | ⚫⚫ | — |  |
- 14 | [Day 14](https://adventofcode.com/2025/day/14) | ⚫⚫ | — |  |
- 15 | [Day 15](https://adventofcode.com/2025/day/15) | ⚫⚫ | — |  |
- 16 | [Day 16](https://adventofcode.com/2025/day/16) | ⚫⚫ | — |  |
- 17 | [Day 17](https://adventofcode.com/2025/day/17) | ⚫⚫ | — |  |
- 18 | [Day 18](https://adventofcode.com/2025/day/18) | ⚫⚫ | — |  |
- 19 | [Day 19](https://adventofcode.com/2025/day/19) | ⚫⚫ | — |  |
- 20 | [Day 20](https://adventofcode.com/2025/day/20) | ⚫⚫ | — |  |
- 21 | [Day 21](https://adventofcode.com/2025/day/21) | ⚫⚫ | — |  |
- 22 | [Day 22](https://adventofcode.com/2025/day/22) | ⚫⚫ | — |  |
- 23 | [Day 23](https://adventofcode.com/2025/day/23) | ⚫⚫ | — |  |
- 24 | [Day 24](https://adventofcode.com/2025/day/24) | ⚫⚫ | — |  |
- 25 | [Day 25](https://adventofcode.com/2025/day/25) | ⚫⚫ | — |  |
 
 ## 🚀 Running the Solutions
 
