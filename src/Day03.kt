@@ -1,4 +1,3 @@
-
 fun main() {
 
     fun part1(input: List<String>): Int {
@@ -32,11 +31,23 @@ fun main() {
         return ans
     }
 
-    fun part2(input: List<String>): Int {
-        return 0
+    fun part2(input: List<String>): Long {
+        var ans = 0L
+        for (curr in input) {
+            var currMax = 0L
+            var startIndex = 0
+            for (i in 1..12) {
+                val endIndex = minOf(curr.length - (12 - i), curr.length)
+                val maxIndexAndNum = curr.substring(startIndex, endIndex).withIndex().maxBy { it.value.digitToInt() }
+                startIndex += maxIndexAndNum.index + 1
+                currMax += maxIndexAndNum.value.digitToInt() * Math.pow(10.0, 12.0 - i).toLong()
+            }
+            ans += currMax
+        }
+        return ans
     }
 
     val input = readInput("Day03")
     part1(input).println()
-    // part2(input).println()
+    part2(input).println()
 }
