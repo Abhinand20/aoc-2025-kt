@@ -8,9 +8,9 @@ My solutions for [Advent of Code 2025](https://adventofcode.com/2025) written in
 ## 📊 Progress
 
 ```
-Stars collected: 6/24 ⭐
-Days completed: 3/12 📅
-Progress: ██████░░░░░░ 25%
+Stars collected: 8/24 ⭐
+Days completed: 4/12 📅
+Progress: ████████░░░░ 33%
 ```
 
 ## 📅 Solutions
@@ -20,7 +20,7 @@ Progress: ██████░░░░░░ 25%
 | 01 | [Day 1](https://adventofcode.com/2025/day/1) | ⭐⭐ | [Kotlin](src/Day01.kt) | ✅ Complete |
  02 | [Day 2](https://adventofcode.com/2025/day/2) | ⭐⭐ | [Kotlin](src/Day02.kt) | ✅ Complete |
  03 | [Day 3](https://adventofcode.com/2025/day/3) | ⭐⭐ | [Kotlin](src/Day03.kt) | ✅ Complete |
- 04 | [Day 4](https://adventofcode.com/2025/day/4) | ⚫⚫ | — |  |
+ 04 | [Day 4](https://adventofcode.com/2025/day/4) | ⭐⭐ | [Kotlin](src/Day04.kt) | ✅ Complete |
  05 | [Day 5](https://adventofcode.com/2025/day/5) | ⚫⚫ | — |  |
  06 | [Day 6](https://adventofcode.com/2025/day/6) | ⚫⚫ | — |  |
  07 | [Day 7](https://adventofcode.com/2025/day/7) | ⚫⚫ | — |  |
@@ -81,4 +81,4 @@ This will automatically analyze your solutions and update this README with the l
 
 🎄 **Happy Coding!** 🎄
 
-*Last updated: December 13, 2025*
+*Last updated: December 15, 2025*
