@@ -1,76 +1,58 @@
-data class Pos(var x: Int, var y: Int)
+data class Pos(val x: Int, val y: Int) {
+    operator fun plus(other: Pos) = Pos(x + other.x, y + other.y)
 
-fun List<String>.getElement(p: Pos): Char {
-    return this[p.x].elementAt(p.y)
-}
-
-fun MutableList<String>.removeRolls(positions: List<Pos>) {
-    for (pos in positions) {
-        var curr = StringBuilder(this[pos.x])
-        curr.setCharAt(pos.y, '.')
-        this[pos.x] = curr.toString()
+    val neighbors by lazy {
+        (-1..1).flatMap { dx -> 
+            (-1..1).map { dy -> Pos(dx, dy) }
+        }.filter{ it != Pos(0,0) }
     }
 }
+
+// Return char at position if valid otherwise null
+operator fun List<String>.get(p: Pos): Char? =
+    if (p.x in indices && p.y in 0..<this[p.x].length)
+        this[p.x][p.y]
+    else null
+
 
 fun main() {
 
-    fun getPositionsToRemove(grid: List<String>): List<Pos> {
-        val n = grid.size
-        val m = grid[0].length
-        var ans = listOf<Pos>()
-
-        fun isValid(i: Int, j: Int): Boolean {
-            return i >= 0 && i < n && j >= 0 && j < m
-        }
-
-        fun shouldInclude(grid: List<String>, i: Int, j: Int): Boolean {
-            val currPos = Pos(i, j)
-            // println("At Pos: $i,$j")
-            if (!grid.getElement(currPos).equals('@')) {
-                return false
+    fun List<String>.getPositionsToRemove(): List<Pos> {
+        return flatMapIndexed { x, row ->
+            row.mapIndexedNotNull { y, char ->
+                val p = Pos(x, y)
+                if (char == '@') p else null
             }
-            var numRolls = 0
-            for (dx in -1..1) {
-                for (dy in -1..1) {
-                    if (dx == 0 && dy == 0) { continue }
-                    val newPos = Pos(i + dx, j + dy)
-                    // println("Checking new pos: $newPos")
-                    if (isValid(newPos.x, newPos.y) && grid.getElement(newPos).equals('@')) {
-                        ++numRolls
-                    }
-                }
+        }.filter { pos ->
+            val ngbCount = pos.neighbors.count { delta ->
+                this[pos + delta] == '@'
             }
-            return numRolls < 4
+            ngbCount < 4
         }
-
-        for (i in 0..<n) {
-            for (j in 0..<m) {
-                if (shouldInclude(grid, i, j)) {
-                    ans += Pos(i, j)
-                }
-            }
-        }
-        return ans
     }
 
+    fun MutableList<String>.removeRolls(positions: List<Pos>) {
+        positions.forEach { pos ->
+            val row = this[pos.x].toCharArray()
+            row[pos.y] = '.'
+            this[pos.x] = String(row)
+        }
+    }
 
     fun part1(input: List<String>): Int {
-        return getPositionsToRemove(input).size
+        return input.getPositionsToRemove().size
     }
 
     fun part2(input: List<String>): Int {
-        // Find indices to remove
         var ans = 0
         var grid = input.toMutableList()
-        while (true) {
-            val toRemove = getPositionsToRemove(grid)
-            if (toRemove.isEmpty()) {
-                return ans
-            }
-            ans += toRemove.size
-            grid.removeRolls(toRemove)
-
-        }
+        do {
+            val toRemove = grid.getPositionsToRemove()
+            val count = toRemove.size
+            ans += count
+            if (count > 0) grid.removeRolls(toRemove)
+        } while (count > 0)
+        return ans
     }
 
     val input = readInput("Day04")
