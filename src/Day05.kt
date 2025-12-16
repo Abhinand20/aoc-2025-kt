@@ -2,7 +2,6 @@ data class Range(val low: Long, val high: Long) {
     fun isOverlapping(other: Range): Boolean {
         return this.low <= other.high && other.low <= this.high
     }
-
     fun numElements() = high - low + 1
 }
 
@@ -11,7 +10,6 @@ fun List<Range>.isInRange(value: Long): Boolean {
         value >= range.low && value <= range.high
     }.filter { it == true }.isNotEmpty()
 }
-
 
 fun List<Range>.getMergedRanges(): List<Range> {
     if (this.isEmpty()) return this
