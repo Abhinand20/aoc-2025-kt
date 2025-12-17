@@ -37,7 +37,6 @@ fun main() {
     fun part2(input: List<String>): Long {
         val grid = input.dropLast(1) // Preserve whitespace
         val ops = Regex("[+*]\\s+").findAll(input.last() + " ").map { it.value }.toList()
-        // Each except last has (n-1) digits
         val numCols = ops.size
         var startIdx = 0
         return (0..<numCols).sumOf { colIdx ->
