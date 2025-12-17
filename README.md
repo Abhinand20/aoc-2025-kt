@@ -8,9 +8,9 @@ My solutions for [Advent of Code 2025](https://adventofcode.com/2025) written in
 ## 📊 Progress
 
 ```
-Stars collected: 11/24 ⭐
+Stars collected: 12/24 ⭐
 Days completed: 6/12 📅
-Progress: ███████████░ 45%
+Progress: ████████████ 50%
 ```
 
 ## 📅 Solutions
@@ -22,7 +22,7 @@ Progress: ███████████░ 45%
  03 | [Day 3](https://adventofcode.com/2025/day/3) | ⭐⭐ | [Kotlin](src/Day03.kt) | ✅ Complete |
  04 | [Day 4](https://adventofcode.com/2025/day/4) | ⭐⭐ | [Kotlin](src/Day04.kt) | ✅ Complete |
  05 | [Day 5](https://adventofcode.com/2025/day/5) | ⭐⭐ | [Kotlin](src/Day05.kt) | ✅ Complete |
- 06 | [Day 6](https://adventofcode.com/2025/day/6) | ⭐⚫ | [Kotlin](src/Day06.kt) | 🚧 Part 1 only |
+ 06 | [Day 6](https://adventofcode.com/2025/day/6) | ⭐⭐ | [Kotlin](src/Day06.kt) | ✅ Complete |
  07 | [Day 7](https://adventofcode.com/2025/day/7) | ⚫⚫ | — |  |
  08 | [Day 8](https://adventofcode.com/2025/day/8) | ⚫⚫ | — |  |
  09 | [Day 9](https://adventofcode.com/2025/day/9) | ⚫⚫ | — |  |
