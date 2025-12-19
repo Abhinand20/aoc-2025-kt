@@ -22,7 +22,7 @@ sourceSets {
 }
 
 application {
-    mainClass = "Day08Kt"
+    mainClass = "Day09Kt"
 }
 
 tasks {

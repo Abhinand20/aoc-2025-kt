@@ -95,7 +95,6 @@ fun main() {
             connections.getOrPut(curr.p1) { mutableListOf() }.add(curr.p2)
             connections.getOrPut(curr.p2) { mutableListOf() }.add(curr.p1)
             val currNodes = numElementsInCircuit(connections, curr.p1, mutableSetOf())
-            // println("$currNodes, $numNodes")
             if (currNodes == numNodes) {
                 return (curr.p1.x * curr.p2.x).toLong()
             }

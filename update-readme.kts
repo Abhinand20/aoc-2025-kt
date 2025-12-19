@@ -46,7 +46,7 @@ fun generateStarDisplay(part1: Boolean, part2: Boolean): String {
 
 fun generateProgressBar(solved: Int, total: Int): String {
     val percentage = if (total > 0) (solved * 100) / total else 0
-    val filledBlocks = (percentage / 8) // Each block represents 4%
+    val filledBlocks = (percentage / 8) // Each block represents 8%
     val emptyBlocks = NUM_DAYS - filledBlocks
 
     return "█".repeat(filledBlocks) + "░".repeat(emptyBlocks) + " $percentage%"
