@@ -1,7 +1,8 @@
 import kotlin.math.*
 import java.util.PriorityQueue
 
-const val NUM_ELEMS = 1000
+// const val NUM_ELEMS = 1000
+const val NUM_ELEMS = 10
 
 data class Point(val x: Int, val y: Int, val z: Int) {
     fun distance(other: Point): Double {
@@ -69,11 +70,39 @@ fun main() {
         return findFinalCounts(connections)
     }
 
+    fun numElementsInCircuit(graph: Map<Point, List<Point>>, node: Point, visited: MutableSet<Point>): Int {
+        if (visited.contains(node)) return 0
+        visited.add(node)
+        var numElems = 1
+        for (ngb in graph.getOrDefault(node, listOf())) {
+            if (!visited.contains(ngb)) {
+                numElems += numElementsInCircuit(graph, ngb, visited)
+            }
+        }
+        return numElems
+    }
+
     fun part2(input: List<String>): Long {
-        return 0L
+        val pq = PriorityQueue<QueueElement>(compareBy { it.dist })
+        computeDistances(input.parsePoints()).forEach { pq.add(it) }
+        val connections = mutableMapOf<Point, MutableList<Point>>()
+        val numNodes = input.size
+        while (true) {
+            if (pq.isEmpty()) {
+                error("Could not find the answer.")
+            }
+            val curr = pq.remove()
+            connections.getOrPut(curr.p1) { mutableListOf() }.add(curr.p2)
+            connections.getOrPut(curr.p2) { mutableListOf() }.add(curr.p1)
+            val currNodes = numElementsInCircuit(connections, curr.p1, mutableSetOf())
+            // println("$currNodes, $numNodes")
+            if (currNodes == numNodes) {
+                return (curr.p1.x * curr.p2.x).toLong()
+            }
+        }
     }
 
     val input = readInput("Day08")
-    part1(input).println()
+    // part1(input).println()
     part2(input).println()
 }
