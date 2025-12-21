@@ -8,9 +8,9 @@ My solutions for [Advent of Code 2025](https://adventofcode.com/2025) written in
 ## 📊 Progress
 
 ```
-Stars collected: 16/24 ⭐
-Days completed: 8/12 📅
-Progress: ████████░░░░ 66%
+Stars collected: 20/24 ⭐
+Days completed: 10/12 📅
+Progress: ██████████░░ 83%
 ```
 
 ## 📅 Solutions
@@ -25,8 +25,8 @@ Progress: ████████░░░░ 66%
  06 | [Day 6](https://adventofcode.com/2025/day/6) | ⭐⭐ | [Kotlin](src/Day06.kt) | ✅ Complete |
  07 | [Day 7](https://adventofcode.com/2025/day/7) | ⭐⭐ | [Kotlin](src/Day07.kt) | ✅ Complete |
  08 | [Day 8](https://adventofcode.com/2025/day/8) | ⭐⭐ | [Kotlin](src/Day08.kt) | ✅ Complete |
- 09 | [Day 9](https://adventofcode.com/2025/day/9) | ⚫⚫ | — |  |
- 10 | [Day 10](https://adventofcode.com/2025/day/10) | ⚫⚫ | — |  |
+ 09 | [Day 9](https://adventofcode.com/2025/day/9) | ⭐⭐ | [Kotlin](src/Day09.kt) | ✅ Complete |
+ 10 | [Day 10](https://adventofcode.com/2025/day/10) | ⭐⭐ | [Kotlin](src/Day10.kt) | ✅ Complete |
  11 | [Day 11](https://adventofcode.com/2025/day/11) | ⚫⚫ | — |  |
  12 | [Day 12](https://adventofcode.com/2025/day/12) | ⚫⚫ | — |  |
 
@@ -81,4 +81,4 @@ This will automatically analyze your solutions and update this README with the l
 
 🎄 **Happy Coding!** 🎄
 
-*Last updated: December 19, 2025*
+*Last updated: December 21, 2025*
