@@ -12,7 +12,9 @@ fun List<String>.parseMachines(): List<Machine> =
         }
 
 fun List<Int>.toBinary(maxVal: Int): Int =
-        this.map { 2.0.pow(maxVal - 1 - it) }.sum().toInt()
+        this.fold(0) { mask, index -> 
+            mask or (1 shl(maxVal - 1 - index) )
+        }
 
 fun List<List<Int>>.getCombBinary(maxVal: Int): Int =
         this.map { it.toBinary(maxVal) }.fold(0) { acc, value -> 
