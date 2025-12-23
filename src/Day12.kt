@@ -14,6 +14,9 @@ fun main() {
             val counts = nums.split(" ").map { it.toInt() }
             val curr = counts.foldIndexed(0) { idx, acc, count ->
                 acc + (count * numTiles[idx])
+                // Also check the extreme case of each shape taking full 3x3 block.
+                // If both cases (above) match then we got the answer.
+                // acc + (count * 9)
             }
             curr <= (w * h)
         }.count { it == true }
